@@ -40,15 +40,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Hide message after 5 seconds
             setTimeout(function() {
-                formMessage.classList.remove('success');
+                formMessage.className = 'form-message';
             }, 5000);
         });
     }
     
     // Add active class highlighting to current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
-        if (window.location.href.includes(link.getAttribute('href'))) {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
             link.classList.add('active');
         }
     });
