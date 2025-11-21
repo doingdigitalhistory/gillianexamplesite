@@ -194,3 +194,16 @@ footer {
         padding: 1.5rem;
     }
 }
+.witch-media {
+    float: right; /* Pushes it to the right side */
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+}
+
+.witch-media img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
