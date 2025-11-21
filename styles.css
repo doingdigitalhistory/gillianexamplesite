@@ -196,13 +196,15 @@ footer {
 }
 
 .witch-media {
-    display: grid;          /* simplest centering */
-    place-items: center;    /* centers both horizontally and vertically */
-    gap: 15px;              /* space between meme and gif */
+    display: flex;            /* use flexbox for side-by-side layout */
+    justify-content: center;  /* centers items horizontally */
+    align-items: center;      /* centers items vertically */
+    gap: 15px;                /* space between meme and gif */
     width: 100%;
-    max-width: 600px;       /* keeps the block tidy */
-    margin: 20px auto;      /* centers the whole block on the page */
+    max-width: 600px;         /* keeps the block tidy */
+    margin: 20px auto;        /* centers the whole block on the page */
     text-align: center;
+    flex-wrap: wrap;          /* allows wrapping on small screens */
 }
 
 /* Uniform image sizing */
@@ -212,4 +214,12 @@ footer {
     object-fit: cover;
     border-radius: 8px;
     display: block;
+    flex: 0 0 auto;           /* prevent images from shrinking/growing */
+}
+
+/* Optional: stack media vertically on very small screens */
+@media (max-width: 420px) {
+    .witch-media {
+        flex-direction: column;
+    }
 }
