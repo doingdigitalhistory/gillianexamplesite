@@ -194,21 +194,22 @@ footer {
         padding: 1.5rem;
     }
 }
+
 .witch-media {
-    display: flex;          /* use flexbox for easy centering */
-    flex-direction: column; /* stack meme and gif vertically */
-    align-items: center;    /* center them horizontally */
-    justify-content: center;/* optional: center vertically if container has height */
-    margin: 20px auto;      /* center the whole section */
+    display: grid;          /* simplest centering */
+    place-items: center;    /* centers both horizontally and vertically */
+    gap: 15px;              /* space between meme and gif */
+    width: 100%;
+    max-width: 600px;       /* keeps the block tidy */
+    margin: 20px auto;      /* centers the whole block on the page */
     text-align: center;
 }
 
+/* Uniform image sizing */
 .witch-media img {
-    width: 200px;      /* consistent size */
-    height: 200px;     /* square shape */
-    object-fit: cover; /* crop neatly if proportions differ */
-    margin-bottom: 15px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
-
-
